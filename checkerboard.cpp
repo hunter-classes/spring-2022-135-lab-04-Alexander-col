@@ -30,51 +30,56 @@ int main()
     int alt = 0;
     int count = 0;
 
+    std::cout << "Enter height: ";
     std::cin >> height;
+    std::cout << "Enter Width: ";
     std::cin >> width;
-
-    while (hCount != height)
+    std::cout << height << " " << width << std::endl;
+    
+    while (height != hCount)
     {
         if (alt%2 == 0)
         {
-            while(width != wCount)
+            while (width != wCount)
             {
                 if (count%2 == 0)
                 {
                     std::cout << "*";
-
-                }else
+                }
+                if (count%2 == 1)
                 {
                     std::cout << " ";
                 }
                 count++;
                 wCount++;
             }
-        }else if (alt%2 == 1)
-        {
-            if (alt%2 == 1)
-            {
-                while (width != wCount)
-                {
-                    if (count%2 == 0)
-                    {
-                        std::cout << " ";
-                    }else
-                    {
-                        std::cout << "*";
-                    }
-                    count++;
-                    wCount++;
-                }
-                
-            }
-
         }
+        else if (alt%2 == 1)
+        {
+            while(width != wCount)
+            {
+                if (count%2 == 0)
+                {
+                    std::cout << " ";
+                }
+                if (count%2 == 1)
+                {
+                    std::cout << "*";
+                }
+
+                count++;
+                wCount++;
+            }
+        }
+
+
+
+
         count = 0;
-
-        hCount++;
         alt++;
-
+        hCount++;
+        wCount = 0;
+        std::cout << "\n";
     }
 
 
